@@ -1,5 +1,11 @@
 FROM dunglas/frankenphp:latest
 
+# add missing unzip & p7zip-full 
+RUN apt-get update && apt-get install -y \
+    p7zip-full \
+    unzip \
+    && rm -rf /var/lib/apt/lists/*
+
 # install the PHP extensions we need
 RUN install-php-extensions \
     bcmath \
