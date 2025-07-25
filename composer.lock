@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6ed63068d5113d91c9a34c22e665e2e6",
+    "content-hash": "dd3bf11b685679e5695092a906ee3599",
     "packages": [
         {
             "name": "composer/installers",
@@ -213,6 +213,49 @@
                 }
             ],
             "time": "2024-07-20T21:45:45+00:00"
+        },
+        {
+            "name": "jsongerber/wp-sync-db",
+            "version": "v2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jsongerber/wp-sync-db.git",
+                "reference": "b76ba01d84fc3db009e845f33a5e16c00bfd833c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jsongerber/wp-sync-db/zipball/b76ba01d84fc3db009e845f33a5e16c00bfd833c",
+                "reference": "b76ba01d84fc3db009e845f33a5e16c00bfd833c",
+                "shasum": ""
+            },
+            "require-dev": {
+                "php-stubs/wordpress-globals": "^0.2.0",
+                "php-stubs/wordpress-stubs": "^6.8",
+                "php-stubs/wp-cli-stubs": "^2.12"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "WPSDB\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "description": "WP Sync DB eliminates the manual work of migrating a WP database.",
+            "homepage": "https://github.com/jsongerber/wp-sync-db",
+            "keywords": [
+                "db",
+                "plugin",
+                "wordpress",
+                "wp-sync-db"
+            ],
+            "support": {
+                "issues": "https://github.com/jsongerber/wp-sync-db/issues",
+                "source": "https://github.com/jsongerber/wp-sync-db/tree/v2.0.4"
+            },
+            "time": "2025-07-10T07:43:01+00:00"
         },
         {
             "name": "oscarotero/env",
