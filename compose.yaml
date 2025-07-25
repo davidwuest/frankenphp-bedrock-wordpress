@@ -17,6 +17,14 @@ services:
       WP_HOME: http://localhost
       WP_SITEURL: http://localhost/wp
       WP_DEBUG_LOG: "/dev/stderr"
+      # The "FRANKENPHP_CONFIG" environment variable allows you to customize the configuration of the FrankenPHP server.
+      # You can use this variable to set various PHP or server directives at container startup, such as enabling extensions,
+      # adjusting resource limits, or modifying server behavior. Specify configuration options as a string, with each directive
+      # separated by a semicolon. This provides flexibility to tailor the PHP environment without modifying the container image.
+      # Sets the PHP memory limit to 512 megabytes by configuring the "memory_limit" directive in php.ini.
+      # This ensures that PHP scripts running in the container have sufficient memory for execution,
+      # which can help prevent memory exhaustion errors in resource-intensive applications.
+      FRANKENPHP_CONFIG: php_ini "memory_limit" "512M"
     volumes:
       - ./:/app/
       - ./docker/caddy/Caddyfile:/etc/caddy/Caddyfile
