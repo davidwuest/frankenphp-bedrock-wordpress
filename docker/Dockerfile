@@ -17,7 +17,9 @@ RUN install-php-extensions \
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+# Move the Caddyfile to the correct location
 COPY ./docker/caddy/Caddyfile /etc/caddy/Caddyfile
+# Set the working directory
 COPY --chown=root:root ./ /app/
 
 # Copy the entrypoint script
