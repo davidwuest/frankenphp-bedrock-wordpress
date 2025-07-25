@@ -1,10 +1,7 @@
-FROM dunglas/frankenphp:latest
+FROM dunglas/frankenphp:1.9-php8.3.23-alpine
 
-# add missing unzip & p7zip-full 
-RUN apt-get update && apt-get install -y \
-    p7zip-full \
-    unzip \
-    && rm -rf /var/lib/apt/lists/*
+# add missing unzip & p7zip
+RUN apk add --no-cache unzip p7zip
 
 # install the PHP extensions we need
 RUN install-php-extensions \
