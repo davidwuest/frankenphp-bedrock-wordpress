@@ -29,7 +29,7 @@ RUN chmod +x /entrypoint.sh
 
 # Install PHP dependencies (WordPress via Bedrock)
 WORKDIR /app
-# RUN composer install --no-dev --optimize-autoloader
+
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["frankenphp", "run", "--config", "/etc/caddy/Caddyfile"]
