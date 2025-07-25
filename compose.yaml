@@ -1,5 +1,4 @@
 services:
-
   wordpress:
     image: frankenphp/bedrock_wordpress
     build:
@@ -24,7 +23,7 @@ services:
       # Sets the PHP memory limit to 512 megabytes by configuring the "memory_limit" directive in php.ini.
       # This ensures that PHP scripts running in the container have sufficient memory for execution,
       # which can help prevent memory exhaustion errors in resource-intensive applications.
-      FRANKENPHP_CONFIG: php_ini "memory_limit" "512M"
+      FRANKENPHP_CONFIG: php_ini "memory_limit" "256M"
     volumes:
       - ./:/app/
       - ./docker/caddy/Caddyfile:/etc/caddy/Caddyfile
@@ -41,16 +40,7 @@ services:
       - db:/var/lib/mysql
     ports:
       - "3306:3306"
-#   cadvisor:
-#     image: gcr.io/cadvisor/cadvisor:latest
-#     restart: always
-#     ports:
-#       - "8080:8080"
-#     volumes:
-#       - /var/run/docker.sock:/var/run/docker.sock:ro
-#       - /:/rootfs:ro
-#       - /var/lib/docker/:/var/lib/docker:ro
-#       - /sys:/sys:ro
+
 
 volumes:
   db:
