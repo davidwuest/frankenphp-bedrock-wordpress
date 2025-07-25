@@ -8,15 +8,14 @@ services:
     restart: always
     ports:
       - 80:80
-      - 443:443
     environment:
       DB_HOST: db
       DB_USER: exampleuser
       DB_PASSWORD: examplepass
       DB_NAME: exampledb
       WP_ENV: development
-      WP_HOME: https://localhost
-      WP_SITEURL: https://localhost/wp
+      WP_HOME: http://localhost
+      WP_SITEURL: http://localhost/wp
     volumes:
       - ./:/app/
       - ./docker/caddy/Caddyfile:/etc/caddy/Caddyfile
@@ -33,6 +32,16 @@ services:
       - db:/var/lib/mysql
     ports:
       - "3306:3306"
+#   cadvisor:
+#     image: gcr.io/cadvisor/cadvisor:latest
+#     restart: always
+#     ports:
+#       - "8080:8080"
+#     volumes:
+#       - /var/run/docker.sock:/var/run/docker.sock:ro
+#       - /:/rootfs:ro
+#       - /var/lib/docker/:/var/lib/docker:ro
+#       - /sys:/sys:ro
 
 volumes:
   db:
